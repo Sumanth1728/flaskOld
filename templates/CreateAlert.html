@@ -1,0 +1,14 @@
+if{% if Atype=="Admin" %}
+    {% extends "admin.html" %}
+{% elif Atype=="Employee"  %}
+    {% extends "employee.html" %}
+{% else %}
+    {% extends "customer.html" %}
+{% endif %}
+
+{% block content %}
+
+<div class="alert alert-success" role="alert">
+  {{msg}}
+</div>
+{% endblock %}

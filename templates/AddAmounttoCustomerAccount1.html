@@ -1,0 +1,56 @@
+{% if Acctype=="Admin"%}
+{% extends "admin.html"%}
+{% else %}
+{% extends "employee.html"%}
+{% endif %}
+{% block content %}
+
+   <h1>Add Search Customer to add Money</h1>
+   <br>
+   <br>
+
+
+   {% with messages = get_flashed_messages() %}
+       {% if messages %}
+           {% for message in messages %}
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>{{message }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                         </div>
+
+           {% endfor %}
+       {% endif %}
+   {% endwith %}
+     <table border = "0" cellspacing=20%>
+       <tr>
+          <th>Customer id</th>
+          <td>:</td>
+            <td>{{cust.C_id}}</td>
+
+       </tr>
+       <tr>
+          <th>First Name</th>
+          <td>:</td>
+            <td>{{cust.C_firstname}}</td>
+       </tr>
+       <tr>
+          <th>Last Name</th>
+          <td>:</td>
+            <td>{{cust.C_lastname}}</td>
+       </tr>
+       <tr>
+          <th>Email</th>
+          <td>:</td>
+            <td>{{cust.C_email}}</td>
+       </tr>
+         </table>
+         <br>
+         <br>
+         <form action="" method="post" novalidate>
+             {{ form.hidden_tag() }}
+         {{form.Amount.label}} {{form.Amount}}
+            {{ form.submit() }}
+       </form>
+
+
+{% endblock %}

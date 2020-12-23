@@ -1,0 +1,29 @@
+{% extends "customer.html"%}
+{% block content %}
+<h2>Transaction Details</h2>
+<br>
+<br>
+<table style="border: 1px solid black;" cellspacing=20%>
+<tr style="border: 1px solid black;">
+   <th style="border: 1px solid black;">Transaction id</th>
+   <th style="border: 1px solid black;">Narration </th>
+   <th style="border: 1px solid black;">Card Used</th>
+   <th style="border: 1px solid black;">Processed amount</th>
+   <th style="border: 1px solid black;">Process Type</th>
+   <th style="border: 1px solid black;">Transaction Time</th>
+   <th style="border: 1px solid black;">Balance</th>
+   </tr>
+   {% for Trans in cust %}
+   <tr style="border: 1px solid black;">
+     <th style="border: 1px solid black;">{{ Trans.T_id }}</th>
+     <td style="border: 1px solid black;">{{Trans.R_id  }}</td>
+     <td style="border: 1px solid black;">{{ Trans.Card_Number }}</td>
+     <td style="border: 1px solid black;">{{ Trans.T_amount }}</td>
+     <td style="border: 1px solid black;">{{ Trans.T_Type }}</td>
+     <td style="border: 1px solid black;">{{ Trans.T_Time }}</td>
+     <td style="border: 1px solid black;">{{Trans.T_balance }}</td>
+   </tr>
+   {% endfor %}
+</table>
+
+{% endblock %}

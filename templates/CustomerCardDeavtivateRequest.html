@@ -1,0 +1,23 @@
+{% extends "customer.html"%}
+{% block content %}
+
+   <h1>Request for Card Deactivation </h1>
+   <br>
+   <br>
+
+
+
+
+         <form action="" method="post" novalidate>
+             {{ form.hidden_tag() }}
+         {{form.card1.label}} {{form.card1}}
+         <br>
+         <br>
+         {{form.reason.label}} {{form.reason}}
+         <br>
+         <br>
+            {{ form.submit() }}
+       </form>
+
+
+{% endblock %}

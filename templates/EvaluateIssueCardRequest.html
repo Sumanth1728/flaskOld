@@ -1,0 +1,68 @@
+{% extends "admin.html"%}
+{% block content %}
+
+   <h1>Customer Details</h1>
+   <br>
+   <br>
+   <table border = "0" cellspacing=20%>
+     <tr>
+        <th>First Name</th>
+        <td>:</td>
+        <td>{{ cust.C_firstname }}</td>
+     </tr>
+     <tr>
+        <th>Last Name</th>
+        <td>:</td>
+        <td>{{ cust.C_lastname }}</td>
+     </tr>
+
+   <tr>
+     <th>Email</th>
+     <td>:</td>
+     <td>{{ cust.C_email }}</td>
+   </tr>
+   <tr>
+     <th>Email</th>
+     <td>:</td>
+     <td>{{ cust.C_balance }}</td>
+   </tr>
+</table>
+
+<br>
+<br>
+<h1>Requested card Information</h1>
+<br>
+<br>
+<table border = "0" cellspacing=20%>
+  <tr>
+     <th>Request Id</th>
+     <td>:</td>
+     <td>{{ reqs.id }}</td>
+  </tr>
+  <tr>
+     <th>Requested Card Type</th>
+     <td>:</td>
+     <td>{{ reqs.Card_Type }}</td>
+  </tr>
+
+<tr>
+  <th>Requested Usagetype</th>
+  <td>:</td>
+  <td>{{ reqs.Usagetype }}</td>
+</tr>
+<tr>
+  <th>Requested Card Status Type</th>
+  <td>:</td>
+  <td>{{ reqs.Card_Status_Type }}</td>
+</tr>
+</table>
+<br>
+<br>
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    {{ form.Approve() }} {{ form.Decline() }}
+
+
+</form>
+
+{% endblock %}

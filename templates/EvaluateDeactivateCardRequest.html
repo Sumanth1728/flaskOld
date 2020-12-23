@@ -1,0 +1,70 @@
+{% if Acctype=="Admin"%}
+{% extends "admin.html"%}
+{% else %}
+{% extends "employee.html"%}
+{% endif %}
+{% block content %}
+
+
+
+   <h1>Customer Details</h1>
+   <br>
+   <br>
+   <table border = "0" cellspacing=20%>
+     <tr>
+        <th>First Name</th>
+        <td>:</td>
+        <td>{{ cust.C_firstname }}</td>
+     </tr>
+     <tr>
+        <th>Last Name</th>
+        <td>:</td>
+        <td>{{ cust.C_lastname }}</td>
+     </tr>
+
+   <tr>
+     <th>Email</th>
+     <td>:</td>
+     <td>{{ cust.C_email }}</td>
+   </tr>
+   <tr>
+     <th>Email</th>
+     <td>:</td>
+     <td>{{ cust.C_balance }}</td>
+   </tr>
+</table>
+
+<br>
+<br>
+<h1>Requested Decativation Card Information</h1>
+<br>
+<br>
+<table border = "0" cellspacing=20%>
+  <tr>
+     <th>Request Id</th>
+     <td>:</td>
+     <td>{{ reqs.id }}</td>
+  </tr>
+  <tr>
+     <th>Requested Deactivation Card Number </th>
+     <td>:</td>
+     <td>{{ reqs.CardNo }}</td>
+  </tr>
+
+<tr>
+  <th>Mentioned Reason for Deactivation</th>
+  <td>:</td>
+  <td>{{ reqs.DeActReason }}</td>
+</tr>
+
+</table>
+<br>
+<br>
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    {{ form.Approve() }} {{ form.Decline() }}
+
+
+</form>
+
+{% endblock %}

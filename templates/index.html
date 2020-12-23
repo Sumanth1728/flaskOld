@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>login page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+    <body>
+        <div class="loginbox">
+        <img src="2.png" class="avat">
+            <h1>LOGIN HERE</h1>
+            <form method="POST">
+         {# This hidden_tag is a CSRF security feature. #}
+           {{ form.hidden_tag() }}
+        {{ form.user.label }} {{ form.user(class='input--style-3') }}
+        <br>
+        <br>
+        {{ form.passl.label }} {{ form.passl(class='input--style-3') }}
+        <br>
+       <br>
+        {{ form.submit() }}
+      </form>
+
+
+        </div>
+
+    </body>
+</html>

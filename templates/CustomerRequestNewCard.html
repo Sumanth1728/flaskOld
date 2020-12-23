@@ -1,0 +1,31 @@
+{% extends "customer.html"%}
+{% block content %}
+
+   <h1>Customer Details</h1>
+   <br>
+   <br>
+   <form action="" method="post" novalidate>
+       {{ form.hidden_tag() }}
+   <table border = "0" cellspacing=20%>
+     <tr>
+        <th>{{ form.CardType.label }}</th>
+        <td>:</td>
+        <td>{{ form.CardType }}</td>
+     </tr>
+     <tr>
+        <th>{{ form.CardStatusType.label }}</th>
+        <td>:</td>
+        <td>{{ form.CardStatusType }}</td>
+     </tr>
+     <tr>
+        <th>{{ form.Usagetype.label }}</th>
+        <td>:</td>
+        <td>{{ form.Usagetype }}</td>
+     </tr>
+
+</table>
+<br>
+<br>
+{{form.submit}}
+  </form>
+{% endblock %}

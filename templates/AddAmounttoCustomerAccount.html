@@ -1,0 +1,35 @@
+{% if Acctype=="Admin"%}
+{% extends "admin.html"%}
+{% else %}
+{% extends "employee.html"%}
+{% endif %}
+{% block content %}
+
+<h1>Add Amount</h1>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+           <div class="alert alert-warning alert-dismissible fade show" role="alert">
+ <strong>{{message }}</strong>
+ <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+    <br>
+    <br>
+
+<form action="" method="post" novalidate>
+
+  {{ form1.hidden_tag() }}
+
+   {{ form1.user.label }} {{ form1.user }}
+
+   {{ form1.submit() }}
+
+    </form>
+
+
+{% endblock %}

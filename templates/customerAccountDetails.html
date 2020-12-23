@@ -1,0 +1,49 @@
+{% extends "customer.html"%}
+{% block content %}
+
+   <h1>Customer Details</h1>
+   <br>
+   <br>
+   <table border = "0" cellspacing=20%>
+     <tr>
+        <th>First Name</th>
+        <td>:</td>
+        <td>{{ cust.C_firstname }}</td>
+     </tr>
+     <tr>
+        <th>Last Name</th>
+        <td>:</td>
+        <td>{{ cust.C_lastname }}</td>
+     </tr>
+     <tr>
+        <th>Gender</th>
+        <td>:</td>
+        <td>{{ cust.C_gender }}</td>
+     </tr>
+
+   <tr>
+     <th>Email</th>
+     <td>:</td>
+     <td>{{ cust.C_email }}</td>
+   </tr>
+
+   <tr>
+     <th>Phone Number </th>
+     <td>:</td>
+     <td>{{ cust.C_number }}</td>
+   </tr>
+
+   <tr>
+     <th>Age</th>
+     <td>:</td>
+     <td>{{ cust.C_age }}</td>
+   </tr>
+   <tr>
+     <th>Address </th>
+     <td>:</td>
+     <td>{{ cust.C_address }}</td>
+   </tr>
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "customer.html"%}
+{% block content %}
+
+   <h1>Customer Details</h1>
+   <br>
+   <br>
+   <table border = "0" cellspacing=20%>
+     <tr>
+        <th>First Name</th>
+        <td>:</td>
+        <td>{{ cust.C_firstname }}</td>
+     </tr>
+     <tr>
+        <th>Last Name</th>
+        <td>:</td>
+        <td>{{ cust.C_lastname }}</td>
+     </tr>
+
+   <tr>
+     <th>Email</th>
+     <td>:</td>
+     <td>{{ cust.C_email }}</td>
+   </tr>
+</table>
+
+<br>
+<br>
+<h1>Customer Card Details</h1>
+<br>
+<br>
+<table border = "1" cellspacing=20%>
+<tr>
+   <th>Card Number</th>
+   <th>Card Type</th>
+   <th>Customer Id</th>
+   <th>Usagetype</th>
+   <th>Card Status Type</th>
+   <th>ExpiryDate</th>
+   <th>activation Status</th>
+   </tr>
+   {% for card in cards1 %}
+   <tr>
+     <th>{{ card.Card_No }}</th>
+     <td>{{ card.Card_Type }}</td>
+     <td>{{ card.C_id }}</td>
+     <td>{{ card.Usagetype }}</td>
+     <td>{{ card.Card_Status_Type }}</td>
+     <td>{{ card.ExpiryDate }}</td>
+     <td>{{ card.Card_Activate }}</td>
+   </tr>
+   {% endfor %}
+</table>
+
+{% endblock %}

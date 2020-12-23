@@ -1,0 +1,9 @@
+{% extends "customer.html"%}
+{% block content %}
+<h1>Balance Enquiry</h1>
+<br>
+<br>
+<p>The Current Balance in your Account : <b>{{cust1}}</b> </p>
+<br>
+<p><a href="{{url_for('ViewCustomerTransactions',id=id)}}">Click here to see your past Transactions</a></p>
+{% endblock %}

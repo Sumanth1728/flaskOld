@@ -1,0 +1,74 @@
+{% if Acctype=="Admin"%}
+{% extends "admin.html"%}
+{% else %}
+{% extends "employee.html"%}
+{% endif %}
+
+{% block content %}
+<h2>Customer Registration Form</h2>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+           <div class="alert alert-warning alert-dismissible fade show" role="alert">
+ <strong>{{message }}</strong>
+ <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<form  method="POST" >
+    {{ form.hidden_tag() }}
+  <table border = "0" cellspacing=20%>
+
+         <tr>
+            <th>{{ form.firstname.label }}</th>
+            <td>:</td>
+            <td>{{ form.firstname }}</td>
+         </tr>
+         <tr>
+            <th>{{ form.lastname.label }}</th>
+            <td>:</td>
+            <td>{{ form.lastname }}</td>
+         </tr>
+         <tr>
+            <th>{{ form.gender.label }}</th>
+            <td>:</td>
+            <td>{{ form.gender }}</td>
+         </tr>
+
+         <tr>
+           <th>{{ form.email.label }}</th>
+           <td>:</td>
+           <td>{{ form.email }}</td>
+         </tr>
+
+         <tr>
+           <th>{{ form.phone.label }} </th>
+           <td>:</td>
+           <td>{{ form.phone }}</td>
+         </tr>
+
+         <tr>
+           <th>{{ form.age.label }}</th>
+           <td>:</td>
+           <td>{{ form.age }}</td>
+         </tr>
+
+         <tr>
+           <th>{{ form.address.label }} </th>
+           <td>:</td>
+           <td>{{ form.address }}</td>
+         </tr>
+         <tr>
+           <th>{{ form.balance.label }} </th>
+           <td>:</td>
+           <td>{{ form.balance }}</td>
+         </tr>
+      </table>
+      <br>
+      <br>
+         {{ form.submit() }}
+    </form>
+
+{% endblock %}
