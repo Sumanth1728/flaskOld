@@ -1,3 +1,4 @@
+
 alembic
 blinker
 chardet
@@ -33,3 +34,5 @@ wincertstore
 WTForms
 Flask-Mail
 DateTime
+email_validator
+
